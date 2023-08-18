@@ -1,3 +1,45 @@
 :root {
   --primary: #2d969b;
 }
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+
+/* * {
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+}
+
+body {
+display: flex;
+justify-content: center;
+align-items: center;
+min-height: 100vh;
+font-family: "Bebas Neue", cursive;
+background: #0c3b5a;  
+ } */
+
+.container {
+  display: flex;
+}
+
+.container .eyes {
+  position: relative;
+  width: 92px;
+  height: 92px;
+  display: block;
+  background-color: #e73e7e;
+  margin: 0px;
+  border-radius: 50%;
+}
+.container .eyes::before {
+  content: "";
+  top: 50%;
+  left: 35px;
+  transform: translate(-50%, -50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #000;
+  position: absolute;
+  box-sizing: border-box;
+}
