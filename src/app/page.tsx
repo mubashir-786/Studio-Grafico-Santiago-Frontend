@@ -24,10 +24,10 @@ export default function HomePage() {
 
   //   document?.querySelector('body').addEventListener('mousemove', eyeball);
 
-    return () => {
-      document?.querySelector('body').removeEventListener('mousemove', eyeball);
-    };
-  }, []);
+  //   return () => {
+  //     document?.querySelector('body').removeEventListener('mousemove', eyeball);
+  //   };
+  // }, []);
 
   return (
     <Box sx={{ width: "100%" }}>
