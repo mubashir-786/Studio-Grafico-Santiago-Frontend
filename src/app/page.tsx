@@ -7,6 +7,8 @@ import HeroSection from "@/components/HeroSection";
 import Portfolio from "@/components/Portfolio";
 import { Box, Button, Typography } from "@mui/material";
 import Image from "next/image";
+import {useEffect} from "react";
+
 export default function HomePage() {
   useEffect(() => {
     const eyeball = () => {
