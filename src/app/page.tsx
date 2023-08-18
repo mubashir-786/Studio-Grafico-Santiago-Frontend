@@ -8,25 +8,25 @@ import Portfolio from "@/components/Portfolio";
 import { Box, Button, Typography } from "@mui/material";
 import Image from "next/image";
 export default function HomePage() {
-  // useEffect(() => {
-  //   const eyeball = () => {
-  //     const eyes = document.querySelectorAll('.eyes');
-  //     eyes.forEach((eye: any) => {
-  //       const x = eye.getBoundingClientRect().left + eye.clientWidth / 2;
-  //       const y = eye.getBoundingClientRect().top + eye.clientHeight / 2;
+  useEffect(() => {
+    const eyeball = () => {
+      const eyes = document.querySelectorAll('.eyes');
+      eyes.forEach((eye: any) => {
+        const x = eye.getBoundingClientRect().left + eye.clientWidth / 2;
+        const y = eye.getBoundingClientRect().top + eye.clientHeight / 2;
 
-  //       const radian = Math.atan2(event?.pageX - x, event?.pageY - y);
-  //       const rotate = radian * (180 / Math.PI) * -1 + 270;
-  //       eye.style.transform = `rotate(${rotate}deg)`;
-  //     });
-  //   };
+        const radian = Math.atan2(event?.pageX - x, event?.pageY - y);
+        const rotate = radian * (180 / Math.PI) * -1 + 270;
+        eye.style.transform = `rotate(${rotate}deg)`;
+      });
+    };
 
-  //   document?.querySelector('body').addEventListener('mousemove', eyeball);
+    document?.querySelector('body').addEventListener('mousemove', eyeball);
 
-  //   return () => {
-  //     document?.querySelector('body').removeEventListener('mousemove', eyeball);
-  //   };
-  // }, []);
+    return () => {
+      document?.querySelector('body').removeEventListener('mousemove', eyeball);
+    };
+  }, []);
 
   return (
     <Box sx={{ width: "100%" }}>
