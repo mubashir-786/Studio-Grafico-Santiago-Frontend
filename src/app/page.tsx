@@ -31,14 +31,14 @@ export default function HomePage() {
 
   return (
     <Box sx={{ width: "100%" }}>
-      <Box sx={{ display: "flex" }}>
+      <Box sx={{ display: "flex", flexDirection: { xs: "column", md: "row" } }}>
         <Box
           sx={{
             backgroundColor: "black",
-            height: "100vh",
-            width: "5%",
+            height: { xs: "10vh", md: "100vh" },
+            width: { xs: "100%", md: "5%" },
             display: "flex",
-            flexDirection: "column",
+            flexDirection: { xs: "row", md: "column" },
             justifyContent: "space-between",
             alignItems: "center",
           }}
@@ -76,20 +76,21 @@ export default function HomePage() {
           </Box>
           <Typography
             sx={{
-              rotate: "-90deg",
+              rotate: { xs: "none", md: "-90deg" },
               color: "white",
               width: "280px",
-              fontSize: "20px",
+              fontSize: { xs: "14px", md: "20px" },
             }}
           >
             STUDIO GRAFICO <span style={{ color: "#E73E7E" }}>SANTIAGO</span>
           </Typography>
           <Box
             sx={{
-              borderTop: "1px solid #DFDFDF",
+              borderTop: { xs: "none", md: "1px solid #DFDFDF" },
+              borderLeft: { xs: "1px solid #DFDFDF", md: "none" },
               paddingY: "20px",
-              width: "100%",
-
+              width: { xs: "auto", md: "100%" },
+              paddingX: { xs: "20px", md: "0px" },
               display: "flex",
               justifyContent: "center",
             }}
@@ -108,7 +109,7 @@ export default function HomePage() {
             </svg>
           </Box>
         </Box>
-        <Box sx={{ width: "95%", height: "100vh" }}>
+        <Box sx={{ width: { xs: "100%", md: "95%" }, height: "100vh" }}>
           <Image
             src={img}
             alt="img"
@@ -116,7 +117,7 @@ export default function HomePage() {
           />
           <Box
             sx={{
-              width: "90%",
+              width: { xs: "100%", md: "90%" },
               height: "100vh",
               position: "absolute",
               top: "0",
@@ -136,16 +137,22 @@ export default function HomePage() {
 
             <Typography
               sx={{
-                fontSize: "117px",
+                fontSize: { xs: "50px", md: "117px" },
                 fontWeight: "800",
                 marginBottom: "0px",
-                lineHeight: "129px",
+                lineHeight: { xs: "50px", md: "129px" },
+                textAlign: "center",
               }}
             >
               START <span style={{ color: "#E73E7E" }}>CREATING.</span>
             </Typography>
             <Typography
-              sx={{ marginTop: "0px", fontSize: "19px", letterSpacing: "5px" }}
+              sx={{
+                marginTop: "0px",
+                fontSize: "19px",
+                letterSpacing: "5px",
+                textAlign: "center",
+              }}
             >
               PLANNING · <span style={{ color: "#E73E7E" }}>DESIGN</span> ·
               DEVELOPMENT

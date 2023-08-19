@@ -7,7 +7,12 @@ import Image from "next/image";
 export default function FourSection() {
   return (
     <Box
-      sx={{ width: "100%", display: "flex", justifyContent: "space-evenly" }}
+      sx={{
+        width: "100%",
+        display: "flex",
+        justifyContent: "space-evenly",
+        flexWrap: "wrap",
+      }}
     >
       <Box sx={{ display: "flex", flexDirection: "column", gap: "20px" }}>
         <Box
