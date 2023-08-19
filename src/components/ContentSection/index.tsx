@@ -8,7 +8,15 @@ import Image from "next/image";
 export default function ContentSection() {
   return (
     <>
-      <Box sx={{ width: "100%", height: "100vh", position: "relative" }}>
+      <Box
+        sx={{
+          width: "100%",
+          height: "100vh",
+          position: "relative",
+          display: "flex",
+          alignItems: "center",
+        }}
+      >
         <Image
           src={content}
           alt="content"
@@ -21,7 +29,7 @@ export default function ContentSection() {
             height: "530px",
             backgroundColor: "black",
             position: "absolute",
-            top: "40px",
+            // top: "40px",
             display: "flex",
             flexDirection: "column",
             justifyContent: "center",

@@ -89,6 +89,7 @@ export default function HomePage() {
               borderTop: "1px solid #DFDFDF",
               paddingY: "20px",
               width: "100%",
+
               display: "flex",
               justifyContent: "center",
             }}
@@ -116,6 +117,7 @@ export default function HomePage() {
           <Box
             sx={{
               width: "90%",
+              height: "100vh",
               position: "absolute",
               top: "0",
               display: "flex",
@@ -126,7 +128,7 @@ export default function HomePage() {
           >
             <div
               className="container"
-              style={{ marginTop: "80px", marginBottom: "20px" }}
+              style={{ marginTop: "5px", marginBottom: "20px" }}
             >
               <div className="eyes"></div>
               <div className="eyes"></div>
