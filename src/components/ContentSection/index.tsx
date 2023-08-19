@@ -24,9 +24,9 @@ export default function ContentSection() {
         />
         <Box
           sx={{
-            padding: "79px 110px 80px 80px",
-            width: "35%",
-            height: "530px",
+            padding: { xs: "20px", lg: "79px 110px 80px 80px" },
+            width: { xs: "60%", md: "35%" },
+            height: { xs: "auto", md: "530px" },
             backgroundColor: "black",
             position: "absolute",
             // top: "40px",
@@ -37,12 +37,18 @@ export default function ContentSection() {
             left: "50px",
           }}
         >
-          <Typography sx={{ fontSize: "32px", color: "white" }}>
+          <Typography
+            sx={{ fontSize: { xs: "16px", md: "32px" }, color: "white" }}
+          >
             An online lab forging splendid{" "}
             <span style={{ color: "#E73E7E" }}>moments</span> .
           </Typography>
           <Typography
-            sx={{ fontSize: "14px", color: "#6F6F6F", marginTop: "10px" }}
+            sx={{
+              fontSize: { xs: "12px", md: "14px" },
+              color: "#6F6F6F",
+              marginTop: "10px",
+            }}
           >
             Lorem Ipsum is simply dummy text of the printing and typesetting
             industry. Lorem Ipsum has been the industrys standard dummy text
@@ -70,12 +76,13 @@ export default function ContentSection() {
         sx={{
           width: "100%",
           display: "flex",
+          flexDirection: { xs: "column", md: "row" },
           paddingX: "50px",
           paddingY: "100px",
           backgroundColor: "#F7F7F7",
         }}
       >
-        <Box sx={{ width: "30%" }}>
+        <Box sx={{ width: { xs: "100%", md: "30%" } }}>
           <Typography sx={{ fontSize: "20px" }}>
             We <span style={{ color: "#E73E7E" }}>combine</span> design and
             thinking and technical craft.
@@ -88,7 +95,13 @@ export default function ContentSection() {
           </Typography>
         </Box>
         <Box
-          sx={{ display: "flex", width: "70%", justifyContent: "space-evenly" }}
+          sx={{
+            display: "flex",
+            width: { xs: "100%", md: "70%" },
+            justifyContent: "space-evenly",
+            flexWrap: "wrap",
+            marginTop: { xs: "40px", md: "0px" },
+          }}
         >
           <Box
             sx={{

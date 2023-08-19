@@ -8,17 +8,27 @@ export default function HeroSection() {
       sx={{
         width: "90%",
         display: "flex",
-        height: "500px",
+        height: { xs: "auto", md: "500px" },
         marginX: "auto",
         gap: "40px",
         marginY: "80px",
+        flexDirection: { xs: "column", md: "row" },
       }}
     >
-      <Box sx={{ display: "flex", gap: "2px" }}>
-        <Image src={img1} alt="img" />
-        <Image src={img2} alt="img2" />
+      <Box
+        sx={{ display: "flex", gap: "2px", width: { xs: "100%", md: "50%" } }}
+      >
+        <Image src={img1} alt="img" style={{ width: "50%" }} />
+        <Image src={img2} alt="img2" style={{ width: "50%" }} />
       </Box>
-      <Box sx={{ display: "flex", flexDirection: "column", gap: "20px" }}>
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          gap: "20px",
+          width: { xs: "100%", md: "50%" },
+        }}
+      >
         <Typography sx={{ fontSize: "40px", fontWeight: "600" }}>
           Design, thought, and{" "}
           <span style={{ color: "#E73E7E" }}>skill unite</span>.

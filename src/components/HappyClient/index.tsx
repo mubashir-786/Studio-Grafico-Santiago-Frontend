@@ -8,6 +8,7 @@ export default function HappyClient() {
         display: "flex",
         justifyContent: "space-evenly",
         marginY: "130px",
+        flexWrap: "wrap",
       }}
     >
       <Box
@@ -19,7 +20,9 @@ export default function HappyClient() {
           alignItems: "center",
         }}
       >
-        <Typography sx={{ fontSize: "32px", fontWeight: "600" }}>
+        <Typography
+          sx={{ fontSize: { xs: "20px", md: "32px" }, fontWeight: "600" }}
+        >
           350
         </Typography>
         <Typography
@@ -50,7 +53,9 @@ export default function HappyClient() {
           alignItems: "center",
         }}
       >
-        <Typography sx={{ fontSize: "32px", fontWeight: "600" }}>
+        <Typography
+          sx={{ fontSize: { xs: "20px", md: "32px" }, fontWeight: "600" }}
+        >
           1500
         </Typography>
         <Typography
@@ -81,7 +86,9 @@ export default function HappyClient() {
           alignItems: "center",
         }}
       >
-        <Typography sx={{ fontSize: "32px", fontWeight: "600" }}>
+        <Typography
+          sx={{ fontSize: { xs: "20px", md: "32px" }, fontWeight: "600" }}
+        >
           875
         </Typography>
         <Typography
@@ -112,7 +119,9 @@ export default function HappyClient() {
           alignItems: "center",
         }}
       >
-        <Typography sx={{ fontSize: "32px", fontWeight: "600" }}>
+        <Typography
+          sx={{ fontSize: { xs: "20px", md: "32px" }, fontWeight: "600" }}
+        >
           984
         </Typography>
         <Typography
