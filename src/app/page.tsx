@@ -8,8 +8,9 @@ import { Img } from "@/components/IMG";
 import Portfolio from "@/components/Portfolio";
 import { Text } from "@/components/Text";
 import { Box, Button, Typography } from "@mui/material";
-import Image from "next/image";
+import Image from "next/image
 import { useEffect } from "react";
+
 export default function HomePage() {
   useEffect(() => {
     const eyeball = (event: MouseEvent) => {
