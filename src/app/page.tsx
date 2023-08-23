@@ -8,7 +8,7 @@ import { Img } from "@/components/IMG";
 import Portfolio from "@/components/Portfolio";
 import { Text } from "@/components/Text";
 import { Box, Button, Typography } from "@mui/material";
-import Image from "next/image
+import Image from "next/image";
 import { useEffect } from "react";
 
 export default function HomePage() {
@@ -83,6 +83,7 @@ export default function HomePage() {
               color: "white",
               width: "280px",
               fontSize: { xs: "14px", md: "20px" },
+              whiteSpace: "nowrap",
             }}
           >
             STUDIO GRAFICO <span style={{ color: "#E73E7E" }}>SANTIAGO</span>

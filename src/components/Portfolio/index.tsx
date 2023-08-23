@@ -52,7 +52,7 @@ export default function Portfolio() {
     },
   ];
   return (
-    <Box sx={{ width: "100%", marginY: "30px" }}>
+    <Box sx={{ width: "100%", marginTop: "60px" }}>
       <Box
         sx={{
           display: "flex",
