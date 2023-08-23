@@ -1,6 +1,6 @@
 "use client";
-import img from "@/assets/images/Section.png";
 import dot from "@/assets/images/dot.png";
+import img from "@/assets/images/section.png";
 import ContactForm from "@/components/ContactForm";
 import { Box, ImageList, ImageListItem, Typography } from "@mui/material";
 import Image from "next/image";
