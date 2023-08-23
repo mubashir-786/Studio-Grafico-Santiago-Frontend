@@ -13,10 +13,15 @@ export default function HeroSection() {
         gap: "40px",
         marginY: "80px",
         flexDirection: { xs: "column", md: "row" },
+        justifyContent: "center",
       }}
     >
       <Box
-        sx={{ display: "flex", gap: "2px", width: { xs: "100%", md: "50%" } }}
+        sx={{
+          display: "flex",
+          gap: "2px",
+          width: { xs: "100%", md: "50%", lg: "560px" },
+        }}
       >
         <Image src={img1} alt="img" style={{ width: "50%" }} />
         <Image src={img2} alt="img2" style={{ width: "50%" }} />

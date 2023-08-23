@@ -80,6 +80,7 @@ export default function ContentSection() {
           paddingX: "50px",
           paddingY: "100px",
           backgroundColor: "#F7F7F7",
+          justifyContent: "center",
         }}
       >
         <Box sx={{ width: { xs: "100%", md: "30%" } }}>
@@ -97,8 +98,9 @@ export default function ContentSection() {
         <Box
           sx={{
             display: "flex",
-            width: { xs: "100%", md: "70%" },
-            justifyContent: "space-evenly",
+            width: { xs: "100%", md: "70%", lg: "55%" },
+            justifyContent: "space-around",
+            marginLeft: { xs: "0px", lg: "50px" },
             flexWrap: "wrap",
             marginTop: { xs: "40px", md: "0px" },
           }}

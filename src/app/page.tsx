@@ -1,17 +1,21 @@
 "use client";
 import img from "@/assets/Hero-Banner.png";
+import ContactForm from "@/components/ContactForm";
 import ContentSection from "@/components/ContentSection";
 import FourSection from "@/components/FourSection";
 import HappyClient from "@/components/HappyClient";
 import HeroSection from "@/components/HeroSection";
 import { Img } from "@/components/IMG";
 import Portfolio from "@/components/Portfolio";
+import Testimonial from "@/components/Testimonial";
 import { Text } from "@/components/Text";
 import { Box, Button, Typography } from "@mui/material";
 import Image from "next/image";
-import { useEffect } from "react";
+import Link from "next/link";
+import { useEffect, useState } from "react";
 
 export default function HomePage() {
+  const [navWidth, setNavWidth] = useState("0%");
   useEffect(() => {
     const eyeball = (event: MouseEvent) => {
       const eyes = document.querySelectorAll(".eyes");
@@ -31,10 +35,26 @@ export default function HomePage() {
       document.body.removeEventListener("mousemove", eyeball);
     };
   }, []);
+  const openNav = () => {
+    setNavWidth("100%");
+  };
 
+  const closeNav = () => {
+    setNavWidth("0%");
+  };
   return (
     <Box sx={{ width: "100%" }}>
       <Box sx={{ display: "flex", flexDirection: { xs: "column", md: "row" } }}>
+        <div id="myNav" style={{ width: navWidth }} className="overlay">
+          <a href="javascript:void(0)" className="closebtn" onClick={closeNav}>
+            &times;
+          </a>
+          <div className="overlay-content">
+            <Link href={"/service"}>Service</Link>
+            <Link href={"/portfolio"}>Portfolio</Link>
+            <Link href={"/contact"}>Contact Us</Link>
+          </div>
+        </div>
         <Box
           sx={{
             backgroundColor: "black",
@@ -97,7 +117,10 @@ export default function HomePage() {
               paddingX: { xs: "20px", md: "0px" },
               display: "flex",
               justifyContent: "center",
+              cursor: "pointer",
+              zIndex: "1",
             }}
+            onClick={openNav}
           >
             <svg
               width="23"
@@ -274,82 +297,39 @@ export default function HomePage() {
               </div>
             </div>
           </div>
-          {/* <div className="bg-gray-900_a2 flex flex-col font-montserrat items-start justify-start max-w-[1350px] md:px-10 sm:px-5 px-[90px] py-[130px] w-full">
-            <div className="flex md:flex-col flex-row md:gap-5 items-start justify-start max-w-[1170px] mx-auto w-full">
-              <div className="flex sm:flex-1 flex-col items-start justify-center pl-[15px] md:pr-10 sm:pr-5 pr-[40.94px] w-[585px] sm:w-full">
-                <div className="flex flex-col items-start justify-start w-full">
-                  <div className="flex flex-col items-start justify-start w-auto sm:w-full">
-                    <Text
-                      className="md:text-3xl sm:text-[28px] text-[32px] text-white-A700 w-auto"
-                      size="txtMontserratMedium32"
-                    >
-                      <span className="text-white-A700 font-montserrat text-left font-medium">
-                        An online lab forging{" "}
-                      </span>
-                      <span className="text-pink-400 font-montserrat text-left font-medium">
-                        <>
-                          splendid
-                          <br />
-                          moments.
-                        </>
-                      </span>
-                    </Text>
-                  </div>
-                  <div className="flex flex-col font-roboto items-start justify-start mt-[21px] pr-[8.8px] w-[396px] sm:w-full">
-                    <Text
-                      className="leading-[24.00px] text-gray-500 text-sm"
-                      size="txtRobotoRegular14Gray500"
-                    >
-                      <>
-                        Lorem Ipsum is simply dummy text of the printing and
-                        <br />
-                        typesetting industry. Lorem Ipsum has been the
-                        industry’s
-                        <br />
-                        standard dummy text ever since the 1500s, when an
-                        unknown
-                        <br />
-                        printer took a galley of type and scrambled it to make a
-                        type
-                        <br />
-                        specimen book. It has survived not only five centuries,
-                        but also
-                        <br />
-                        the leap into electronic typesetting, remaining
-                        essentially
-                        <br />
-                        unchanged.
-                      </>
-                    </Text>
-                  </div>
-                  <div className="bg-white-A700 border-2 border-solid border-white-A700 cursor-pointer font-semibold min-w-[162px] mt-[35px] py-[11px] text-[11px] text-center text-gray-900 tracking-[0.50px] uppercase">
-                    About Company
-                  </div>
-                </div>
-              </div>
-              <div className="h-[343px] relative w-[22%] md:w-full">
-                <Img
-                  className="h-[343px] m-auto object-cover w-full"
-                  src="images/img_figuremoments1.png"
-                  alt="figuremomentsOne"
-                />
-                <Img
-                  className="absolute h-[142px] inset-[0] justify-center m-auto object-cover w-[142px]"
-                  src="images/img_linkiconplaypngwebp.png"
-                  alt="linkiconplaypng"
-                />
-              </div>
-              <div className="flex flex-col items-start justify-center px-[15px] py-[1.83px] w-[313px]">
-                <Img
-                  className="h-[339px] sm:h-auto object-cover w-[298px] md:w-full"
-                  src="images/img_figuremoments2.png"
-                  alt="figuremomentsTwo"
-                />
-              </div>
-            </div>
-          </div> */}
+          <Testimonial />
         </div>
       </div>
+      <ContactForm />
+      <Box
+        sx={{
+          width: "100%",
+          height: "150px",
+          display: "flex",
+          justifyContent: "center",
+        }}
+      >
+        <Box
+          sx={{
+            width: { xs: "100%", sm: "80%" },
+            height: "150px",
+            display: "flex",
+            justifyContent: { xs: "center", sm: "space-between" },
+            alignItems: "center",
+            flexDirection: { xs: "column", sm: "row" },
+          }}
+        >
+          <Typography>
+            <span style={{ color: "#E73E7E", marginRight: "5px" }}>
+              © 2023 SGS is Proudly Powered by
+            </span>
+            TEAM V
+          </Typography>
+          <Typography style={{ color: "#6F6F6F" }}>
+            On social networks
+          </Typography>
+        </Box>
+      </Box>
     </Box>
   );
 }

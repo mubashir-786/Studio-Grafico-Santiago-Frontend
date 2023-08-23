@@ -97,6 +97,7 @@ export default function HappyClient() {
             fontWeight: "400",
             color: "#6F6F6F",
             textAlign: "center",
+            whiteSpace: "nowrap",
           }}
         >
           Work Completed
@@ -130,6 +131,7 @@ export default function HappyClient() {
             fontWeight: "400",
             color: "#6F6F6F",
             textAlign: "center",
+            whiteSpace: "nowrap",
           }}
         >
           Telephonic Talk
