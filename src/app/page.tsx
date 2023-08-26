@@ -3,6 +3,7 @@ import img from "@/assets/Hero-Banner.png";
 import logo from "@/assets/bulb.png";
 import ContactForm from "@/components/ContactForm";
 import ContentSection from "@/components/ContentSection";
+import FourIcon from "@/components/FourIcons";
 import FourSection from "@/components/FourSection";
 import HappyClient from "@/components/HappyClient";
 import HeroSection from "@/components/HeroSection";
@@ -280,6 +281,7 @@ export default function HomePage() {
       </div>
       <VideoSection />
       <Testimonial />
+      <FourIcon />
       <ContactForm />
       <Box
         sx={{
