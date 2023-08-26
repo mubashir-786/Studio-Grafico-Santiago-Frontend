@@ -52,7 +52,8 @@ export default function HomePage() {
             &times;
           </a>
           <div className="overlay-content">
-            <Link href={"/service"}>Service</Link>
+            <Link href={"/"}>Home</Link>
+            <Link href={"/services"}>Service</Link>
             <Link href={"/portfolio"}>Portfolio</Link>
             <Link href={"/contact"}>Contact Us</Link>
           </div>

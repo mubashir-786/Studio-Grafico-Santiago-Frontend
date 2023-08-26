@@ -2,7 +2,11 @@ import sym from "@/assets/images/sym.png";
 import { Box, Typography } from "@mui/material";
 import Image from "next/image";
 
-export default function ImageRow() {
+type Props = {
+  isLine?: boolean;
+};
+
+export default function ImageRow({ isLine = true }: Props) {
   return (
     <Box>
       <Box sx={{ display: "flex", alignItems: "center" }}>
@@ -25,6 +29,7 @@ export default function ImageRow() {
           backgroundColor: "rgba(0, 0, 0, 0.1)",
           marginTop: "10px",
           marginBottom: "12px",
+          display: isLine ? "block" : "none",
         }}
       />
     </Box>

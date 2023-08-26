@@ -3,7 +3,6 @@ import img3 from "@/assets/images/Item-2.png";
 import img4 from "@/assets/images/Item-3.png";
 import img5 from "@/assets/images/Item-4.png";
 import img6 from "@/assets/images/Item-5.png";
-import img7 from "@/assets/images/Item-6.png";
 import img9 from "@/assets/images/Item-8.png";
 import img1 from "@/assets/images/Item.png";
 import img10 from "../../assets/images/Item-9.png";
@@ -15,52 +14,65 @@ export default function Portfolio() {
     {
       img: img1,
       title: "Bed",
+      cols: 1,
+      row: 1,
     },
     {
       img: img2,
       title: "Books",
+      cols: 2,
+      row: 2,
     },
     {
       img: img3,
+      cols: 1,
+      row: 1,
       title: "Sink",
     },
     {
       img: img4,
+      cols: 1,
+      row: 1,
       title: "Kitchen",
     },
     {
       img: img5,
+      cols: 1,
+      row: 1,
       title: "Blinds",
     },
     {
       img: img5,
+      cols: 1,
+      row: 1,
       title: "Chairs",
     },
     {
       img: img6,
+      cols: 1,
+      row: 2,
       title: "Laptop",
     },
     {
       img: img9,
+      cols: 1,
+      row: 1,
       title: "Doors",
     },
     {
       img: img5,
+      cols: 1,
+      row: 1,
       title: "Coffee",
     },
     {
       img: img10,
+      cols: 1,
+      row: 1,
       title: "Storage",
     },
-    {
-      img: img7,
-      title: "Candle",
-    },
-    {
-      img: img3,
-      title: "Coffee table",
-    },
   ];
+
   return (
     <Box sx={{ width: "100%", marginTop: "60px" }}>
       <Box
@@ -86,21 +98,19 @@ export default function Portfolio() {
         sx={{
           width: "95%",
           margin: "auto",
-          height: { xs: "auto", lg: "106vh" },
-          overflow: "hidden",
+          // height: { xs: "auto", lg: "106vh" },
+          // overflow: "hidden",
           // marginBottom: { xs: '0px', lg: '60px' }
         }}
       >
-        <ImageList variant="masonry" cols={4} gap={8}>
-          {itemData.map((item: any) => (
-            <ImageListItem key={item.img}>
-              <Image src={item.img} alt={item.title} />
-              {/* <img
-                src={img3}
-                // srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
+        <ImageList cols={4} gap={8}>
+          {itemData.map((item, i) => (
+            <ImageListItem key={i} rows={item.row}>
+              <Image
+                src={item.img}
                 alt={item.title}
-              // loading="lazy"
-              /> */}
+                style={{ objectFit: "contain" }}
+              />
             </ImageListItem>
           ))}
         </ImageList>

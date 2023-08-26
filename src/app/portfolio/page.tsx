@@ -1,64 +1,85 @@
 "use client";
+import img2 from "@/assets/images/Item-1.png";
+import img3 from "@/assets/images/Item-2.png";
+import img4 from "@/assets/images/Item-3.png";
+import img5 from "@/assets/images/Item-4.png";
+import img6 from "@/assets/images/Item-5.png";
+import img9 from "@/assets/images/Item-8.png";
+import img1 from "@/assets/images/Item.png";
 import dot from "@/assets/images/dot.png";
 import img from "@/assets/images/section.png";
 import ContactForm from "@/components/ContactForm";
 import { Box, ImageList, ImageListItem, Typography } from "@mui/material";
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
+import img10 from "../../assets/images/Item-9.png";
 
 export default function Portfolio() {
   const [selectedTab, setSelectedTab] = useState<any>(1);
+  const [navWidth, setNavWidth] = useState("0%");
   const itemData = [
     {
-      img: "https://images.unsplash.com/photo-1549388604-817d15aa0110",
+      img: img1,
       title: "Bed",
+      cols: 1,
+      row: 1,
     },
     {
-      img: "https://images.unsplash.com/photo-1525097487452-6278ff080c31",
+      img: img2,
       title: "Books",
+      cols: 2,
+      row: 2,
     },
     {
-      img: "https://images.unsplash.com/photo-1523413651479-597eb2da0ad6",
+      img: img3,
+      cols: 1,
+      row: 1,
       title: "Sink",
     },
     {
-      img: "https://images.unsplash.com/photo-1563298723-dcfebaa392e3",
+      img: img4,
+      cols: 1,
+      row: 1,
       title: "Kitchen",
     },
     {
-      img: "https://images.unsplash.com/photo-1588436706487-9d55d73a39e3",
+      img: img5,
+      cols: 1,
+      row: 1,
       title: "Blinds",
     },
     {
-      img: "https://images.unsplash.com/photo-1574180045827-681f8a1a9622",
+      img: img5,
+      cols: 1,
+      row: 1,
       title: "Chairs",
     },
     {
-      img: "https://images.unsplash.com/photo-1530731141654-5993c3016c77",
+      img: img6,
+      cols: 1,
+      row: 2,
       title: "Laptop",
     },
     {
-      img: "https://images.unsplash.com/photo-1481277542470-605612bd2d61",
+      img: img9,
+      cols: 1,
+      row: 1,
       title: "Doors",
     },
     {
-      img: "https://images.unsplash.com/photo-1517487881594-2787fef5ebf7",
+      img: img5,
+      cols: 1,
+      row: 1,
       title: "Coffee",
     },
     {
-      img: "https://images.unsplash.com/photo-1516455207990-7a41ce80f7ee",
+      img: img10,
+      cols: 1,
+      row: 1,
       title: "Storage",
     },
-    {
-      img: "https://images.unsplash.com/photo-1597262975002-c5c3b14bbd62",
-      title: "Candle",
-    },
-    {
-      img: "https://images.unsplash.com/photo-1519710164239-da123dc03ef4",
-      title: "Coffee table",
-    },
   ];
-
   const tabs = [
     { id: 1, text: "ALL" },
     { id: 2, text: "BRANDING" },
@@ -67,9 +88,54 @@ export default function Portfolio() {
     { id: 5, text: "WEB" },
     { id: 6, text: "PHOTOGRAPHY" },
   ];
+  const openNav = () => {
+    setNavWidth("100%");
+  };
 
+  const closeNav = () => {
+    setNavWidth("0%");
+  };
   return (
     <Box>
+      <div id="myNav" style={{ width: navWidth }} className="overlay">
+        <a href="javascript:void(0)" className="closebtn" onClick={closeNav}>
+          &times;
+        </a>
+        <div className="overlay-content">
+          <Link href={"/"}>Home</Link>
+          <Link href={"/services"}>Service</Link>
+          <Link href={"/portfolio"}>Portfolio</Link>
+          <Link href={"/contact"}>Contact Us</Link>
+        </div>
+      </div>
+      <Box
+        sx={{
+          paddingY: "20px",
+          width: "60px",
+          paddingX: { xs: "20px", md: "0px" },
+          display: "flex",
+          justifyContent: "center",
+          cursor: "pointer",
+          position: "absolute",
+          top: "1px",
+          right: "1px",
+          zIndex: "1",
+        }}
+        onClick={openNav}
+      >
+        <svg
+          width="23"
+          height="18"
+          viewBox="0 0 23 18"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <rect width="23" height="2" fill="#F2F2F2" />
+          <rect y="8" width="23" height="2" fill="#F2F2F2" />
+          <rect y="8" width="23" height="2" fill="#F2F2F2" />
+          <rect y="16" width="23" height="2" fill="#F2F2F2" />
+        </svg>
+      </Box>
       <Image
         src={img}
         style={{
@@ -110,7 +176,7 @@ export default function Portfolio() {
           justifyContent: "center",
           alignItems: "center",
           marginY: "70px",
-          flexDirection: { xs: "column", sm: "row" },
+          flexWrap: "wrap",
         }}
       >
         {tabs.map((item) => {
@@ -135,19 +201,16 @@ export default function Portfolio() {
         sx={{
           width: "95%",
           margin: "auto",
-          height: { xs: "auto", lg: "106vh" },
-          overflow: "hidden",
-          marginBottom: { xs: "0px", lg: "60px" },
+          marginBottom: { xs: "30px", lg: "60px" },
         }}
       >
-        <ImageList variant="masonry" cols={4} gap={8}>
-          {itemData.map((item: any) => (
-            <ImageListItem key={item.img}>
-              <img
-                src={`${item.img}?w=248&fit=crop&auto=format`}
-                srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
+        <ImageList cols={4} gap={8}>
+          {itemData.map((item, i) => (
+            <ImageListItem key={i} rows={item.row}>
+              <Image
+                src={item.img}
                 alt={item.title}
-                loading="lazy"
+                style={{ objectFit: "contain" }}
               />
             </ImageListItem>
           ))}
@@ -172,13 +235,15 @@ export default function Portfolio() {
             flexDirection: { xs: "column", sm: "row" },
           }}
         >
-          <Typography>
+          <Typography sx={{ fontSize: { xs: "11px", md: "16px" } }}>
             <span style={{ color: "#E73E7E", marginRight: "5px" }}>
               © 2023 SGS is Proudly Powered by
             </span>
             TEAM V
           </Typography>
-          <Typography style={{ color: "#6F6F6F" }}>
+          <Typography
+            sx={{ color: "#6F6F6F", fontSize: { xs: "11px", md: "16px" } }}
+          >
             On social networks
           </Typography>
         </Box>

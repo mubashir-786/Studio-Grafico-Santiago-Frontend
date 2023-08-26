@@ -1,13 +1,16 @@
 "use client";
 import dot from "@/assets/images/dot.png";
-import img from "@/assets/images/section.png";
-import ContactForm from "@/components/ContactForm";
-import { Box, ImageList, ImageListItem, Typography } from "@mui/material";
+import img from "@/assets/section.png";
+import ContactUsPageForm from "@/components/ContactUsPage";
+import InputComponent from "@/components/InputComponent";
+import { Box, Typography } from "@mui/material";
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 
 export default function Portfolio() {
   const [selectedTab, setSelectedTab] = useState<any>(1);
+  const [navWidth, setNavWidth] = useState("0%");
   const itemData = [
     {
       img: "https://images.unsplash.com/photo-1549388604-817d15aa0110",
@@ -58,7 +61,13 @@ export default function Portfolio() {
       title: "Coffee table",
     },
   ];
+  const openNav = () => {
+    setNavWidth("100%");
+  };
 
+  const closeNav = () => {
+    setNavWidth("0%");
+  };
   const tabs = [
     { id: 1, text: "ALL" },
     { id: 2, text: "BRANDING" },
@@ -70,6 +79,45 @@ export default function Portfolio() {
 
   return (
     <Box>
+      <div id="myNav" style={{ width: navWidth }} className="overlay">
+        <a href="javascript:void(0)" className="closebtn" onClick={closeNav}>
+          &times;
+        </a>
+        <div className="overlay-content">
+          <Link href={"/"}>Home</Link>
+          <Link href={"/services"}>Service</Link>
+          <Link href={"/portfolio"}>Portfolio</Link>
+          <Link href={"/contact"}>Contact Us</Link>
+        </div>
+      </div>
+      <Box
+        sx={{
+          paddingY: "20px",
+          width: "60px",
+          paddingX: { xs: "20px", md: "0px" },
+          display: "flex",
+          justifyContent: "center",
+          cursor: "pointer",
+          position: "absolute",
+          top: "1px",
+          right: "1px",
+          zIndex: "1",
+        }}
+        onClick={openNav}
+      >
+        <svg
+          width="23"
+          height="18"
+          viewBox="0 0 23 18"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <rect width="23" height="2" fill="#F2F2F2" />
+          <rect y="8" width="23" height="2" fill="#F2F2F2" />
+          <rect y="8" width="23" height="2" fill="#F2F2F2" />
+          <rect y="16" width="23" height="2" fill="#F2F2F2" />
+        </svg>
+      </Box>
       <Image
         src={img}
         style={{
@@ -104,56 +152,107 @@ export default function Portfolio() {
         </Box>
       </Box>
 
+      <ContactUsPageForm />
       <Box
         sx={{
+          width: "90%",
+          margin: "auto",
+          marginBottom: "30px",
+          backgroundColor: "lightgrey",
+          height: "80vh",
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-          marginY: "70px",
-          flexDirection: { xs: "column", sm: "row" },
         }}
       >
-        {tabs.map((item) => {
-          return (
-            <Typography
-              onClick={() => {
-                setSelectedTab(item.id);
-              }}
-              sx={{
-                marginX: "10px",
-                cursor: "pointer",
-                textDecoration: selectedTab == item.id ? "underline" : "none",
-              }}
-            >
-              {item.text}
-            </Typography>
-          );
-        })}
+        Google Map Here
       </Box>
-
       <Box
         sx={{
-          width: "95%",
-          margin: "auto",
-          height: { xs: "auto", lg: "106vh" },
-          overflow: "hidden",
-          marginBottom: { xs: "0px", lg: "60px" },
+          width: "100%",
+          height: "156px",
+          backgroundColor: "black",
+          display: "flex",
+          flexDirection: { xs: "column", md: "row" },
+          alignItems: "center",
+          justifyContent: "space-around",
         }}
       >
-        <ImageList variant="masonry" cols={4} gap={8}>
-          {itemData.map((item: any) => (
-            <ImageListItem key={item.img}>
-              <img
-                src={`${item.img}?w=248&fit=crop&auto=format`}
-                srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
-                alt={item.title}
-                loading="lazy"
-              />
-            </ImageListItem>
-          ))}
-        </ImageList>
+        <Box sx={{ display: "flex", gap: "20px" }}>
+          <Box
+            sx={{ width: "3px", height: "65px", backgroundColor: "white" }}
+          ></Box>
+          <Box>
+            <Typography
+              sx={{ color: "white", fontSize: { xs: "22px", md: "30px" } }}
+            >
+              Join Our Mailing List
+            </Typography>
+            <Typography
+              sx={{ color: "white", fontSize: { xs: "14px", md: "16px" } }}
+            >
+              For receiving our news and updates in your inbox directly.
+            </Typography>
+          </Box>
+        </Box>
+        <Box sx={{ display: "flex" }}>
+          <InputComponent
+            onChange={(e) => {}}
+            sx={{
+              width: { xs: "180px", md: "400px" },
+              borderTopLeftRadius: "15px",
+            }}
+            placeholder="Your Email Address"
+          />
+          <Box
+            sx={{
+              backgroundColor: "#1C1C1C",
+              color: "white",
+              height: "60px",
+              padding: "20px",
+            }}
+          >
+            SIGN UP
+          </Box>
+        </Box>
       </Box>
-      <ContactForm />
+      {/* <GoogleMapReact 
+      style={{ height: `300px` }}
+      defaultZoom={10}
+      resetBoundsOnResize={true}
+      defaultCenter={{ lat: 47.36667, lng: 8.55 }}
+    /> */}
+      {/* <Box
+        sx={{
+          width: "100%",
+          height: "150px",
+          display: "flex",
+          justifyContent: "center",
+        }}
+      >
+        <Box
+          sx={{
+            width: { xs: "100%", sm: "80%" },
+            height: "150px",
+            display: "flex",
+            justifyContent: { xs: "center", sm: "space-between" },
+            alignItems: "center",
+            flexDirection: { xs: "column", sm: "row" },
+          }}
+        >
+          <Typography sx={{ fontSize: { xs: "11px", md: "16px" } }}>
+            <span style={{ color: "#E73E7E", marginRight: "5px" }}>
+              © 2023 SGS is Proudly Powered by
+            </span>
+            TEAM V
+          </Typography>
+          <Typography
+            sx={{ color: "#6F6F6F", fontSize: { xs: "11px", md: "16px" } }}
+          >
+            On social networks
+          </Typography>
+        </Box>
+      </Box> */}
       <Box
         sx={{
           width: "100%",
@@ -172,13 +271,15 @@ export default function Portfolio() {
             flexDirection: { xs: "column", sm: "row" },
           }}
         >
-          <Typography>
+          <Typography sx={{ fontSize: { xs: "11px", md: "16px" } }}>
             <span style={{ color: "#E73E7E", marginRight: "5px" }}>
               © 2023 SGS is Proudly Powered by
             </span>
             TEAM V
           </Typography>
-          <Typography style={{ color: "#6F6F6F" }}>
+          <Typography
+            sx={{ color: "#6F6F6F", fontSize: { xs: "11px", md: "16px" } }}
+          >
             On social networks
           </Typography>
         </Box>
