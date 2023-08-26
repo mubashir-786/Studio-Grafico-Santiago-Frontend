@@ -1,6 +1,6 @@
 "use client";
 import dot from "@/assets/images/dot.png";
-import img from "@/assets/section.png";
+import img from "@/assets/section1.png";
 import ContactUsPageForm from "@/components/ContactUsPage";
 import InputComponent from "@/components/InputComponent";
 import { Box, Typography } from "@mui/material";
