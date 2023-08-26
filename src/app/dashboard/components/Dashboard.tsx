@@ -1,4 +1,4 @@
-import bgImg from "@/assets/Section.png";
+import bgImg from "@/assets/section1.png";
 import { Box } from "@mui/material";
 import Image from "next/image";
 const Dashboard = () => {
