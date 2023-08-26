@@ -20,7 +20,7 @@ export default function ContentSection() {
         <Image
           src={content}
           alt="content"
-          style={{ width: "100%", height: "100vh" }}
+          style={{ width: "100%", height: "100vh", objectFit: "cover" }}
         />
         <Box
           sx={{

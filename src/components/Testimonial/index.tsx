@@ -1,36 +1,32 @@
+import { Box } from "@mui/material";
 import { Img } from "../IMG";
 import { Text } from "../Text";
 
 export default function Testimonial() {
   return (
     <div
-      className="bg-cover bg-no-repeat flex flex-col font-roboto h-[704px] items-start justify-center max-w-[1350px] md:px-10 sm:px-5 px-[105px] py-[130px] w-full"
+      className="bg-cover bg-no-repeat flex flex-col font-roboto h-[704px] items-start justify-center max-w-full px-1 sm:px-5  py-[130px] w-full"
       style={{ backgroundImage: "url('images/img_section.png')" }}
     >
-      <div className="flex flex-col gap-[26px] items-start justify-center max-w-[1140px] mx-auto pb-[85px] md:px-10 sm:px-5 w-full">
-        <div className="flex flex-col relative w-[571px] sm:w-full">
-          <div className="bg-gray-100_01 flex flex-col items-center justify-start bg-[#F7F7F7] mx-auto pb-[85px] pt-[60px] md:px-10 sm:px-5 px-[60px] rounded-md w-auto">
-            <div className="flex flex-col items-start justify-center pl-[2.59px] pr-[1.91px] w-[462px] sm:w-full">
+      <div className="flex flex-col gap-[26px] items-start justify-center max-w-full mx-auto pb-[85px] md:px-0 sm:px-5 w-full">
+        <div className="flex flex-col relative w-full">
+          <div className="bg-gray-100_01 flex flex-col items-center justify-start bg-[#F7F7F7] mx-auto pb-[85px] pt-[60px] md:px-10 sm:px-5  rounded-md w-auto">
+            <div className="flex flex-col items-start justify-center pl-[2.59px] pr-[1.91px] w-full sm:w-[450px]">
               <Text
-                className="leading-[24.00px] text-center text-gray-600 text-sm "
+                className="leading-normal md:leading-[24.00px] text-center text-gray-600 text-sm "
                 size="txtRobotoRegular14"
               >
                 <>
                   Trust us we looked for a very long time and wasted thousands
-                  of dollars
-                  <br />
-                  testing other teams, freelancers, and outsource companies. I
-                  wanted to
-                  <br />
-                  hire the best and after looking at several other companies, I
-                  knew Santiago
-                  <br />
-                  was the perfect guy for the job. He is a true professional.
+                  of dollars testing other teams, freelancers, and outsource
+                  companies. I wanted to hire the best and after looking at
+                  several other companies, I knew Santiago was the perfect guy
+                  for the job. He is a true professional.
                 </>
               </Text>
             </div>
           </div>
-          <div className="flex flex-col items-center justify-start mt-[-50px] mx-auto md:px-10 sm:px-5 px-[200px] w-full z-[1]">
+          <div className="flex flex-col items-center justify-start mt-[-50px] mx-auto md:px-10 sm:px-5 w-full z-[1]">
             <Img
               className="h-[114px] md:h-auto rounded-[50%] w-[114px]"
               src="images/img_avtar07jpgwebp.png"
@@ -48,17 +44,36 @@ export default function Testimonial() {
             >
               GRAPHIC DESIGNER, GOOGLE INC
             </Text>
+            <Box sx={{ marginTop: "20px", display: "flex", gap: "10px" }}>
+              <Box
+                sx={{
+                  backgroundColor: "grey",
+                  width: "9px",
+                  height: "9px",
+                  borderRadius: "50%",
+                }}
+              ></Box>
+              <Box
+                sx={{
+                  backgroundColor: "grey",
+                  opacity: "0.2",
+                  width: "9px",
+                  height: "9px",
+                  borderRadius: "50%",
+                }}
+              ></Box>
+              <Box
+                sx={{
+                  backgroundColor: "grey",
+                  opacity: "0.2",
+                  width: "9px",
+                  height: "9px",
+                  borderRadius: "50%",
+                }}
+              ></Box>
+            </Box>
           </div>
         </div>
-        {/* <PagerIndicator
-        className="flex gap-2.5 h-6 items-start justify-center max-w-[1140px] md:px-10 sm:px-5 px-[546.5px] py-[7px] w-full"
-        count={3}
-        activeCss="inline-block cursor-pointer rounded h-[9px] bg-gray-600 w-[9px]"
-        activeIndex={1}
-        inactiveCss="inline-block cursor-pointer rounded h-[9px] bg-black-900_6c w-[9px]"
-        selectedWrapperCss="inline-block"
-        unselectedWrapperCss="inline-block"
-      /> */}
       </div>
     </div>
   );

@@ -8,6 +8,7 @@ export default function HappyClient() {
         display: "flex",
         justifyContent: "space-evenly",
         marginY: "130px",
+        gap: "20px",
         flexWrap: "wrap",
       }}
     >

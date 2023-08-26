@@ -1,8 +1,6 @@
 import { Box, Typography } from "@mui/material";
-import React from "react";
-import Image from "next/image";
-import mapIcon from "@/assets/icons/mapIcon.png";
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
+import Image from "next/image";
 
 type Props = {
   heading: String;
@@ -22,10 +20,20 @@ const ContactRow = ({ heading, text, image, isLine = true }: Props) => {
       >
         <Image src={image} alt="img" />
         <Box sx={{ marginLeft: "30px" }}>
-          <Typography sx={{ color: "white", fontWeight: "500" }}>
+          <Typography
+            sx={{
+              color: "white",
+              fontWeight: "500",
+              fontSize: { xs: "12px", md: "16px" },
+            }}
+          >
             {heading}
           </Typography>
-          <Typography sx={{ color: "#6F6F6F" }}>{text}</Typography>
+          <Typography
+            sx={{ color: "#6F6F6F", fontSize: { xs: "12px", md: "16px" } }}
+          >
+            {text}
+          </Typography>
         </Box>
       </Box>
       <Box
